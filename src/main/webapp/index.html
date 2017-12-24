@@ -1,0 +1,120 @@
+<!-- public/index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>YUMMY FOOD APP</title>
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="js/Lib/angular-autocomplete/autocomplete.min.css">
+    <link rel="stylesheet" href="js/Lib/angular-loading-bar/loading-bar.min.css">
+    <link rel="stylesheet" href="js/Lib/slider/css/style.css">
+
+
+    <!-- JS -->
+
+    <script type="text/javascript" src="js/Lib/jquery.min.js"></script>
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+
+    <script type="text/javascript" src="js/Lib/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/Lib/angular-ui-router/angular-ui-router.js"></script>
+    <script type="text/javascript" src="js/Lib/angular-loading-bar/loading-bar.min.js"></script>
+    <script type="text/javascript" src="js/Lib/angular-autocomplete/autocomplete.min.js"></script>
+    <script type="text/javascript" src="js/Lib/angular-ng-map/ng-map.min.js"></script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/0.7.3/angular-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/9.0.9/ng-file-upload.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvG-nk14_twDKblH36gf9sFFrt9yDhGH4&libraries=places"></script>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular-touch.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/TweenMax.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/Lib/slider/js/modernizr.custom.63321.js"></script>
+    <script src="js/Lib/slider/js/jquery.catslider.js"></script>
+
+
+
+
+
+    <!-- controllers -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers/HomeController.js"></script>
+    <script src="js/controllers/RegisterController.js"></script>
+    <script src="js/controllers/FindusController.js"></script>
+    <script src="js/controllers/RestaurantController.js"></script>
+    <script src="js/controllers/RatingController.js"></script>
+    <script src="js/controllers/OrderController.js"></script>
+    <script src="js/controllers/RestaurantUpdateController.js"></script>
+    <script src="js/controllers/customerRegisterController.js"></script>
+
+
+
+    <!-- services -->
+    <script src="js/factory/homeService.js"></script>
+    <script src="js/factory/registerService.js"></script>
+    <script src="js/factory/findusService.js"></script>
+    <script src="js/factory/restaurantService.js"></script>
+    <script src="js/factory/ratingService.js"></script>
+    <script src="js/factory/orderService.js"></script>
+    <script src="js/factory/restaurantUpdateService.js"></script>
+    <script src="js/factory/customerRegisterService.js"></script>
+
+
+
+</head>
+
+<body ng-app="yummy" >
+
+
+
+<div  ng-cloak >
+    <md-content  class="md-padding" style="background-image:url(js/Lib/slider/images/food/bg1.jpg) ">
+
+
+        <!-- Navigation Bar -->
+        <md-nav-bar background-color="red "border-style="solid" md-selected-nav-item="currentNavItem"  nav-bar-aria-label="navigation links">
+            <md-nav-item ui-sref="home" md-nav-click="home" name="page1"><h4 style="color:#D0D3D4">home</h4></md-nav-item>
+
+            <md-nav-item  ui-sref="restaurant" md-nav-click="restaurant" name="restaurant"><h4 style="color:#D0D3D4">Restuarents</h4></md-nav-item>
+            <!--<md-nav-item ui-sref="rating" md-nav-click="rating" name="page3">Rating</md-nav-item>-->
+            <!--<md-nav-item ui-sref="findus" md-nav-click="findus" name="page4">FindUs</md-nav-item>-->
+            <!--<md-nav-item ui-sref="register" md-nav-click="register" name="page5">Restaurant</md-nav-item>-->
+            <!--<md-nav-item ui-sref="order" md-nav-click="order" name="page6">Order Now</md-nav-item>-->
+
+
+                <md-button  ui-sref="register" md-nav-click="register" layout-align="end" class="md-raised md-primary" style="background-color:#3498DB">Register Restaurant</md-button>
+                <md-button  ui-sref="customerRegister" md-nav-click="customerRegister" layout-align="end" class="md-raised md-primary" style="background-color:#3498DB">SignIn</md-button>
+
+
+             <!-- <md-button flex="50" class="md-primary md-raised" ng-click="showListBottomSheet()">Show as List</md-button>-->
+
+            <!-- user cart items -->
+
+            <md-nav-item style="float:right;" ng-show="loggedIn" md-nav-click="aboutus" name="page6" style="background-color: blue"><p style="color: #ffffff" >Logged In As User : {{user.Customer_Full_Name}}</p></md-nav-item>
+            <md-nav-item style="float:right;color:#ffffff;" ng-show="loggedIn" ui-sref="order" md-nav-click="aboutus" name="page6" ><p style="color: #ffffff">Cart</p> </md-nav-item>
+            <md-nav-item style="float:right;" ng-show="loggedIn" ng-click="signOut()" md-nav-click="aboutus" name="page6" ><p  style="color: #ffffff" >Sign Out</p> </md-nav-item>
+
+        </md-nav-bar>
+        <div class="ext-content">
+            <ui-view></ui-view>
+        </div>
+    </md-content>
+</div>
+
+</body>
+</html>

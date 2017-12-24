@@ -1,0 +1,7 @@
+*.idea/
+*.settings/
+*taget/
+src/java/.idea/*
+*/.idea/workspace.xml
+.idea/workspace.xml
+src/java/.idea/workspace.xml

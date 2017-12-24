@@ -1,0 +1,42 @@
+body {
+    background-image: url(Images/pic5.jpg);
+    background-repeat: repeat-y;
+}
+
+.navbar.navbar-inverse{
+	opacity: 0.5;
+	filter: alpha(opacity=50); 
+}
+
+h1{
+	font-family : Monotype Corsiva;
+	font-size : 80pt;
+	text-align: center; 
+}
+
+h5{
+	line-height: 150%;
+}
+
+hr {
+height: 1px;
+color: #8B4513;
+background-color: #8B4513;
+border: none;
+}
+
+h3{
+	font-family : Algerian;
+	font-size : 20pt;
+	color:#8B4513;
+}
+
+h4{
+	text-align: center;
+	font-family : Bradley Hand ITC;
+	font-weight: bold;
+}
+
+#food-item{
+	background-color: rgba(245, 245, 245, 0.4);
+}

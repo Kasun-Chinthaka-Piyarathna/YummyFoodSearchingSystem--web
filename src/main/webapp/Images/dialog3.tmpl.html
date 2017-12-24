@@ -1,0 +1,59 @@
+
+
+<md-dialog aria-label="ALL COMMENTS">
+
+
+    <link rel="stylesheet" href="css/rating.css">
+
+
+
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Update Your Restaurant</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <h2></h2>
+                <div flex>
+                    <md-input-container flex>
+                        <label>Update Unit Price</label>
+                        <input required name="comment" ng-model="filters.up">
+                        <div ng-messages="filters.comment.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div flex>
+                    <md-input-container flex>
+                        <label>Update Quantity</label>
+                        <input required name="DeliveryStatus" ng-model="filters.qu">
+                        <div ng-messages="filters.DeliveryStatus.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+
+
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+
+            <!--<span flex></span>-->
+            <md-button ng-click="answer('not useful')">
+                Close
+            </md-button>
+            <md-button ng-click="update()" class="md-primary">
+               Update
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
+

@@ -1,0 +1,139 @@
+<md-content>
+
+    <div class="restaurantUpdate">
+
+        <style>
+            .restaurantUpdate {
+                background: url(js/Lib/slider/images/food/bg1.jpg) no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        </style>
+
+
+
+        <div layout="column">
+
+            <md-card md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch >
+
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{rrr.Restaurant_Name}}</span>
+                        <span class="md-subhead">{{rrr.NearestCity}}</span><br>
+                        <span class="md-subhead">Contact Number:{{rrr.RContact}}</span>
+                        <span class="md-subhead">Ordering Facility:{{rrr.OFacility}}</span>
+
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
+
+
+
+            <!--<md-card md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch>-->
+
+
+
+            <div layout="row" layout-wrap="" >
+                <div ng-repeat="AvailableFoodItem in rrr.AvailableFoodItems" flex="25">
+
+
+                    <md-card md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch >
+
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline" ><lable ng-model="filters.fname">{{AvailableFoodItem.Name}}</lable></span>
+                                <span class="md-subhead"> Avalable Quantity : {{AvailableFoodItem.Quantity}}</span>
+                                <span class="md-subhead"> Unit Price : {{AvailableFoodItem.Unit_Price}}</span>
+                            </md-card-title-text>
+
+                        </md-card-title>
+
+                        <md-card layout="column" layout-align="end center">
+
+                            <!--<md-input-container class="md-block">-->
+                                <!--<label>Update Unit Price:</label>-->
+                                <!--<input required type="number" name="unitpricee" ng-model="filters.UnitP"/>-->
+                            <!--</md-input-container>-->
+
+                            <!--<md-input-container class="md-block">-->
+                                <!--<label>Update Available Quantity:</label>-->
+                                <!--<input required type="number" name="unitpricee" ng-model="filters.Quan"/>-->
+                            <!--</md-input-container>-->
+
+                            <md-card-actions >
+                                <!--<input type="hidden" ng-model="filters.Foodname"  ng-init="Pizza" >-->
+                                <!--<input type="hidden" ng-model="filters.Rest_id"  ng-init="R1" >-->
+
+                                <md-button ng-click="showAdvanced(ev,AvailableFoodItem,rrr)" class="md-raised md-primary">Update Food Item</md-button>
+
+                            </md-card-actions>
+                        </md-card>
+
+
+
+                    </md-card>
+                </div>
+            </div>
+
+
+
+            <!--</md-card>-->
+
+        </div>
+
+        <div>
+
+            <md-card style="background-color: #5bc0de" md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch layout="column" >
+
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline" >Add New Food Item Here.</span>
+                        <input  type="hidden" name="Rest_ID" ng-model="NFood.Rest_id" ng-init="rrr.Restaurant_ID"/>
+
+                    </md-card-title-text>
+
+                </md-card-title>
+
+                <md-card layout="row" layout-align="space-around" style="background-color: #5bc0de">
+
+                    <md-input-container class="md-block">
+                        <label>Food Item Name:</label>
+                        <input required type="text" name="fooditemname" ng-model="filters.FName"/>
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <label>Unit Price:</label>
+                        <input required type="number" name="unitprice" ng-model="filters.UnitPrice"/>
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <label>Available Quantity:</label>
+                        <input required type="number" name="quantity" ng-model="filters.Quantity"/>
+                    </md-input-container>
+
+                </md-card>
+
+
+
+                <md-card-actions layout="row" layout-align="center" >
+
+                    <md-button ng-click="insertFoodItem2(rrr)" class="md-raised md-primary">Confirm</md-button>
+
+                </md-card-actions>
+
+
+
+
+
+
+
+            </md-card>
+
+        </div>
+
+
+
+    </div>
+</md-content>

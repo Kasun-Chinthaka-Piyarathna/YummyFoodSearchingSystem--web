@@ -1,0 +1,125 @@
+
+
+
+<md-content style
+>
+    <div class ="aboutus">
+
+
+        <style>
+            .aboutus {
+                background: url(js/Lib/slider/images/bg11.jpg) no-repeat center center fixed;
+                width: 100%;
+                height: 100%;
+
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        </style>
+
+        <style>
+            table, th , td {
+                border: 1px solid grey;
+                border-collapse: collapse;
+                padding: 5px;
+            }
+
+            table tr:nth-child(odd) {
+                background-color: #f2f2f2;
+                background: url(js/Lib/slider/images/bg24.jpg);
+            }
+
+            table tr:nth-child(even) {
+                background: url(js/Lib/slider/images/bg24.jpg);
+            }
+        </style>
+
+
+        <div layout="row">
+            <div flex>
+            </div>
+
+            <div flex >
+                <md-card style="background-image:url(js/Lib/slider/images/bg14.jpg) ">
+                    <md-list-item class="md-3-line"  ng-click="null">
+                        <div class="md-list-item-text" layout="column">
+                            <h3>Username: {{user.Customer_Full_Name}}</h3>
+                        </div>
+                    </md-list-item>
+
+                    <md-list-item class="md-3-line"  ng-click="null">
+                        <div class="md-list-item-text" layout="column">
+                            <h3>NIC: {{user.NIC}}</h3>
+                        </div>
+                    </md-list-item>
+
+                    <md-list-item class="md-3-line"  ng-click="null">
+                        <div class="md-list-item-text" layout="column">
+                            <h3>Contact Number:  {{user.Contact_Number}}</h3>
+                        </div>
+                    </md-list-item>
+
+                    <md-list-item class="md-3-line"  ng-click="null">
+                        <div class="md-list-item-text" layout="column">
+                            <h3>Email:  {{user.Email}}</h3>
+                        </div>
+                    </md-list-item>
+                    </br>
+                    <tr >
+                        <td>CART DETAILS:</td>
+
+                        <td>
+                            <table >
+                                <tr  >
+                                    <th>ITEM</th>.
+                                    <th>UNIT PRICE</th>
+                                    <th>QUANTITY</th>.
+                                    <th>Total</th>
+                                </tr>
+
+                                <tr ng-repeat = "item in allItems">
+                                    <td>{{ item.Name }}</td>
+                                    <td>{{ item.Unit_Price }}</td>
+                                    <td>{{ item.selectedQuantity }}</td>
+                                    <td>{{ item.Unit_Price * item.selectedQuantity }}</td>
+                                </tr>
+
+                            </table>
+                        </td>
+
+                    </tr>
+
+                    </table>
+                    <md-list-item class="md-3-line"  ng-click="null">
+                        <div class="md-list-item-text" layout="column">
+                            <h3>Total Price: {{totalPrice}}</h3>
+                        </div>
+                    </md-list-item>
+                    <md-list-item class="md-3-line"  ng-click="null">
+                        <div class="md-list-item-text" layout="column">
+                            <h3>Total Price For Delivery:</h3>
+                            <h3>{{distanceCal}}</h3>
+                        </div>
+                    </md-list-item>
+
+
+
+                    <div layout="row" ng-cloak md-theme="{{theme}}" class="container" >
+
+                        <md-button  class="md-primary md-raised" ng-click="showConfirm($event)" style="background-color: darkgreen">ORDER NOW</md-button>
+                    </div>
+
+                </md-card>
+            </div>
+
+            <div flex>
+            </div>
+
+            <!--->
+
+
+
+
+</md-content>
